@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+type PrimalityTest func(n *big.Int, k int) bool
+
 func MillerRabin(n *big.Int, k int) bool {
 	if n.Cmp(constants.BigTwo) == -1 {
 		return false

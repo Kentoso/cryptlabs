@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func FindNBitPrime(primalityTest func(n *big.Int, k int) bool, n int, k int) *big.Int {
+func FindNBitPrime(primalityTest PrimalityTest, n int, k int) *big.Int {
 	if n <= 1 {
 		return nil
 	}

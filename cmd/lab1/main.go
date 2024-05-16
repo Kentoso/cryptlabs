@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	probablyNBitPrime := ops.FindNBitPrime(ops.MillerRabin, 500, 20)
+	probablyNBitPrime := ops.FindNBitPrime(ops.MillerRabin, 1000, 20)
 
 	fmt.Printf("Base 10: %d\n", probablyNBitPrime) // Default String() method outputs base 10
 
