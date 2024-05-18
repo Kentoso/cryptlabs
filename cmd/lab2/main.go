@@ -20,20 +20,21 @@ func main() {
 	aliceMessage := ops.Encrypt(bobPublic, "Hello, Bob! I'm Alice")
 
 	// Bob receives the message and decodes it using his private key
-	decodedAliceMessage := ops.Decrypt(bobPrivate, aliceMessage)
+	decodedAliceMessage := ops.DecryptCRT(bobPrivate, aliceMessage)
 	fmt.Println(decodedAliceMessage)
 
 	// Bob sends a message to Alice, encoding the message using Alice's public key
 	bobMessage := ops.Encrypt(alicePublic, "Hello, Alice! I'm Bob")
 
 	// Alice receives the message and decodes it using her private key
-	decodedBobMessage := ops.Decrypt(alicePrivate, bobMessage)
+	decodedBobMessage := ops.DecryptCRT(alicePrivate, bobMessage)
 	fmt.Println(decodedBobMessage)
 
 	fmt.Println("Alice's public key:", alicePublic)
 	fmt.Println("Alice's private key:", alicePrivate)
 	fmt.Println("Bob's public key:", bobPublic)
 	fmt.Println("Bob's private key:", bobPrivate)
+
 	//public, private := ops.RSA(512, ops.MillerRabin)
 	//message := "Hello, World!"
 	//cipher := ops.Encrypt(public, message)

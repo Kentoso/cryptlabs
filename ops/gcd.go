@@ -32,3 +32,14 @@ func ExtendedGCD(a, b *big.Int) (gcd *big.Int, x *big.Int, y *big.Int) {
 
 	return aa, lastX, lastY
 }
+
+func ModInverse(a, m *big.Int) *big.Int {
+	gcd, x, _ := ExtendedGCD(a, m)
+	if gcd.Cmp(big.NewInt(1)) != 0 {
+		return nil
+	}
+	if x.Cmp(big.NewInt(0)) < 0 {
+		x.Add(x, m)
+	}
+	return x
+}
